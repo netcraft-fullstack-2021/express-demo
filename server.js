@@ -1,11 +1,14 @@
 import express from "express";
 import { config } from "dotenv";
+import {readFileContent} from './read-file-promises.js';
 config();
 const app = express();
 const port = process.env.PORT;
 
-app.get('/', (req, res) => {
-    res.send('Hello from express');
+app.get('/', async (req, res) => {
+    const content = await readFileContent('./index.html');
+    res.setHeader('content-type', 'text/html');
+    res.send(content);
 })
 
 
