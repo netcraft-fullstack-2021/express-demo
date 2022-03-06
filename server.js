@@ -10,7 +10,7 @@ app.get('/', (req, res) => {
 
 app.get('/:parameter', (req, res) => {
     const {parameter} = req.params;
-    res.send(`Hi, have you just send <strong> ${parameter} </strong`)
+    res.send(`Hi, have you just sent <strong> ${parameter} </strong`)
 })
 
 
