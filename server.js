@@ -8,5 +8,10 @@ app.get('/', (req, res) => {
     res.send('Hello from express');
 })
 
+app.get('/:parameter', (req, res) => {
+    const {parameter} = req.params;
+    res.send(`Hi, have you just send <strong> ${parameter} </strong`)
+})
+
 
 app.listen(port, () => console.log(`I am listening on port ${port}`));
